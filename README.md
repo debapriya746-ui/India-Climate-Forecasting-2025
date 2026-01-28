@@ -27,7 +27,7 @@ Recognizing that temperature and rainfall follow fundamentally different statist
 
 ### 3. Executive Summary Heatmap
 *A high-level view of 2025 rainfall intensity (mm) across all 10 cities.*
-![Heatmap](precipitation_heatmap.png)
+![Heatmap](precipitation_heat_map.png)
 
 ---
 
