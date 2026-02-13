@@ -7,7 +7,7 @@
 ## 📑 Executive Summary
 This project implements an end-to-end machine learning pipeline to forecast **monthly average maximum temperatures** and **total precipitation** for 10 major Indian cities for the year 2025. 
 
-Recognizing that temperature and rainfall follow fundamentally different statistical distributions, we utilized a **Dual-Stream Modeling Strategy**:
+Recognizing that temperature and rainfall follow fundamentally different statistical distributions, I utilized a **Dual-Stream Modeling Strategy**:
 * **Temperature:** Modeled using **SARIMA** (Seasonal Auto-Regressive Integrated Moving Average) to capture linear trends and stable seasonality (**Avg RMSE < 1.5°C**).
 * **Precipitation:** Modeled using **Histogram-Based Gradient Boosting** with a **Poisson Loss** objective to handle zero-inflated, skewed rainfall data, successfully predicting monsoon onset and withdrawal.
 
