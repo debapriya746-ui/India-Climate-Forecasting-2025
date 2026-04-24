@@ -2,6 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Library](https://img.shields.io/badge/Library-Scikit--Learn%20%7C%20Statsmodels-orange)
+![LLM](https://img.shields.io/badge/LLM-LLaMA%203.3%2070B%20(Groq)-purple)
 ![Status](https://img.shields.io/badge/Status-Complete-green)
 
 ## 📑 Executive Summary
@@ -11,7 +12,7 @@ Recognizing that temperature and rainfall follow fundamentally different statist
 * **Temperature:** Modeled using **SARIMA** (Seasonal Auto-Regressive Integrated Moving Average) to capture linear trends and stable seasonality (**Avg RMSE < 1.5°C**).
 * **Precipitation:** Modeled using **Histogram-Based Gradient Boosting** with a **Poisson Loss** objective to handle zero-inflated, skewed rainfall data, successfully predicting monsoon onset and withdrawal.
 
-**Key Outcome:** A validated 2025 Forecast Dashboard that differentiates between the distinct monsoon patterns of the West Coast (Mumbai), North India (Delhi), and the Southern Peninsula (Chennai).
+**Key Outcome:** A validated 2025 Forecast Dashboard that differentiates between the distinct monsoon patterns of the West Coast (Mumbai), North India (Delhi), and the Southern Peninsula (Chennai). Forecast results are automatically translated into plain-English executive summaries using **LLaMA 3.3 70B via Groq**, making insights accessible to non-technical stakeholders.
 
 ---
 
@@ -42,6 +43,7 @@ Recognizing that temperature and rainfall follow fundamentally different statist
 | :--- | :--- | :--- | :--- |
 | **Temperature** | **SARIMA** | **Optimized per city** (e.g., `(1,0,0)x(1,0,1,12)`) | Parameters selected via **AIC minimization** to best fit local climate trends. |
 | **Precipitation** | **Gradient Boosting** | `loss='poisson'`, `lags=[1,12,24]` | Poisson loss handles "zero mass" (dry seasons) and skewed rainfall distributions. |
+| **Stakeholder Summaries** | **LLaMA 3.3 70B (Groq)** | `groq` API, zero-shot prompting | Translates numerical forecasts into plain-English business summaries for non-technical audiences. |
 
 ### Validation Strategy
 I employed a rigorous **Hybrid Validation Scheme** to ensure statistical robustness:
@@ -60,3 +62,14 @@ I employed a rigorous **Hybrid Validation Scheme** to ensure statistical robustn
 ├── README.md                         # 📖 Project Documentation
 └── requirements.txt                  # 📦 Dependencies
 -----------------
+
+
+---
+
+## 🤖 LLM Integration
+
+Forecast results are passed to **LLaMA 3.3 70B** (via [Groq](https://console.groq.com)) to generate concise, non-technical executive summaries for each city. Example output for Mumbai:
+
+> *"Mumbai's climate is characterized by an average temperature of 30.5°C, slightly cooler than the national average of 30.9°C. The city experiences significantly higher rainfall (5.7mm vs national avg 3.1mm). Over the past 25 years, Mumbai has seen a warming trend of 0.4°C, indicating a gradual shift in its climate pattern."*
+
+To use this feature, set your Groq API key and run the final cell in the notebook.
