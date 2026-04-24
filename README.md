@@ -73,3 +73,9 @@ Forecast results are passed to **LLaMA 3.3 70B** (via [Groq](https://console.gro
 > *"Mumbai's climate is characterized by an average temperature of 30.5°C, slightly cooler than the national average of 30.9°C. The city experiences significantly higher rainfall (5.7mm vs national avg 3.1mm). Over the past 25 years, Mumbai has seen a warming trend of 0.4°C, indicating a gradual shift in its climate pattern."*
 
 To use this feature, set your Groq API key and run the final cell in the notebook.
+
+---
+
+## ⚠️ Model Limitations
+
+SARIMA residual diagnostic tests indicated autocorrelation ($p < 0.05$) for **Delhi, Mumbai, and Hyderabad**, suggesting the presence of non-linear climatic factors (e.g., urban heat islands, localized weather systems) not fully captured by the model. Forecasts and LLM summaries for these cities should be interpreted with caution. All other cities passed diagnostic checks and are well-validated.
