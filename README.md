@@ -70,7 +70,7 @@ I employed a rigorous **Hybrid Validation Scheme** to ensure statistical robustn
 
 Forecast results are passed to **LLaMA 3.3 70B** (via [Groq](https://console.groq.com)) to generate concise, non-technical executive summaries for each city. Example output for Mumbai:
 
-> *"Mumbai's climate is characterized by an average temperature of 30.5°C, slightly cooler than the national average of 30.9°C. The city experiences significantly higher rainfall (5.7mm vs national avg 3.1mm). Over the past 25 years, Mumbai has seen a warming trend of 0.4°C, indicating a gradual shift in its climate pattern."*
+> *"Mumbai's climate is characterized by high temperatures and significant rainfall, with an average temperature of 30.5°C and average rainfall of 5.7mm over the past 25 years. Compared to the national average, Mumbai's temperature is slightly cooler (0.4°C lower) and its rainfall is significantly higher (2.6mm more). Notably, the city has experienced a warming trend, with temperatures rising by 0.4°C between 2000-2004 and 2020-2024."*
 
 To use this feature, set your Groq API key and run the final cell in the notebook.
 
